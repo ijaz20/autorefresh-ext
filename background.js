@@ -10,9 +10,15 @@
 chrome.runtime.onMessage.addListener( function(request,sender,sendResponse) {
 	// console.log('(background.js) message recieved: '+request.message);
     if( request.message === "reload" ) {
-		chrome.tabs.getSelected(null, function(tab) {
-		  var code = 'window.location.reload(true);';
-		  chrome.tabs.executeScript(tab.id, {code: code});
-		});
+		var opt = {
+			iconUrl: "images/refresh-icon16.png",
+			type: 'list',
+			title: 'Primary Title',
+			message: 'Primary message to display',
+			priority: 1,
+			items: [{ title: 'Item1', message: 'This is item 1.'}]
+		};
+		chrome.notifications.create(`my-notification-${Date.now()}`, opt, function() { console.log('created!'); });
+
     }
 });

@@ -74,7 +74,8 @@ function resetAll(){
 // countdown logic := count to zero, when zero is met reset timer and refresh page
 function countdown(time){
   var t = time;
-  var x = setInterval((function(){
+  var x =
+      // setInterval((function(){
     setInterval(function() {
       // only carry on if in active state
       if(ss_state === true){
@@ -95,7 +96,7 @@ function countdown(time){
         chrome.browserAction.setBadgeText({text:''});
       }
     }, 1000);  
-  })(), 0);
+  // })(), 0);
 }
 
 // add event listeners after DOM has fully loaded (`DOMContentLoaded`)
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // start-stop button click listener
   ss_button.addEventListener('click', ss_clickHandler);
   // start-stop button mouseover listener
-  ss_button.addEventListener('mouseover', ss_mouseoverHandler);
+  // ss_button.addEventListener('mouseover', ss_mouseoverHandler);
   // start-stop button mouseleave listener
-  ss_button.addEventListener('mouseleave', ss_mouseleaveHandler);
+  // ss_button.addEventListener('mouseleave', ss_mouseleaveHandler);
 });

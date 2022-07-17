@@ -16,9 +16,8 @@
   },
 
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "scripts": ["background.js"]
   },
 
-  "permissions": ["activeTab", "storage", "tabs", "http://*/", "https://*/"]
+  "permissions": ["activeTab", "storage", "notifications", "tabs", "background", "http://*/", "https://*/"]
 }
